@@ -2,10 +2,10 @@ from django.db import models
 from django.urls import reverse
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    body = models.TextField()
-    email = models.EmailField(blank=True)
+    title = models.CharField(max_length=200, verbose_name="Название" )
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE,  verbose_name="Автор")
+    body = models.TextField( verbose_name="Описание")
+    email = models.EmailField(blank=True,  verbose_name="Почта")
     def __str__(self):
         return self.title
 
